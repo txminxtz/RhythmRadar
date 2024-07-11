@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact Us</title>
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="logo"><i class='bx bx-headphone'></i>Rhythm Radar</a>
+        <div class="header-icons">
+            <a href="https://open.spotify.com/" target="_blank"><i class='bx bxl-spotify'></i></a>
+            <div id="menu"><i class='bx bx-menu'></i></div>
+        </div>
+    </header>
+
+    <div class="menu-lateral" id="menu-lateral">
+        <ul class="navegacao">
+            <li><a href="index.html">Menu Principal</a></li>
+            <li><a href="contato.html">Contact us</a></li>
+        </ul>
+    </div>
+
+    <div class="fim">
+        <h3>Agradecemos sua visita ao nosso site. Para sugestões de novos conteúdos e/ou melhorias, entre em contato conosco!</h3>
+    </div>
+
+    <div class="container-tabela"> 
+        <table class="tabela-fotos" border="0">
+            <tr>
+                <td class="configuracao">
+                    <img class="foto-integrante" src="imagens/b.jpeg" alt="Bruno Taminato" width="100" height="100">
+                    <p class="titulo-integrante"><b>Bruno Taminato</b></p>
+                    <p class="texto-integrante">
+                        <a href="https://www.instagram.com/taminato_?igsh=MXRwNWpiYnY2eWg5Nw%3D%3D&utm_source=qr" target="_blank">
+                            <i class='bx bxl-instagram'></i>@taminato_
+                        </a>
+                    </p>
+                </td>
+                <td class="configuracao">
+                    <img class="foto-integrante" src="imagens/c.jpeg" alt="Caio Bertaglia" width="100" height="100">
+                    <p class="titulo-integrante"><b>Caio Bertaglia</b></p>
+                    <p class="texto-integrante">
+                        <a href="https://www.instagram.com/caio.bertaglia_?igsh=MXA5NzI0MjJtZHk1aw==" target="_blank">
+                            <i class='bx bxl-instagram'></i>@caio.bertaglia_
+                        </a>
+                    </p>
+                </td>
+                <td class="configuracao">
+                    <img class="foto-integrante" src="imagens/j.jpeg" alt="Jany" width="100" height="100">
+                    <p class="titulo-integrante"><b>Janiely Vieira</b></p>
+                    <p class="texto-integrante">
+                        <a href="https://www.instagram.com/janyy.l?igsh=MWgxb2VoZTQ4aXRudQ==" target="_blank">
+                            <i class='bx bxl-instagram'></i>@janyy.l
+                        </a>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function navigate(page) {
+            window.location.href = page;
+        }
+
+        const menuBtn = document.getElementById('menu');
+        const menuLateral = document.getElementById('menu-lateral');
+
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); 
+            menuLateral.classList.toggle('menu-ativo');
+        });
+
+        document.addEventListener('click', (e) => {
+            const target = e.target;
+            const menuOpen = menuLateral.classList.contains('menu-ativo');
+
+            if (menuOpen && target !== menuBtn && !menuLateral.contains(target)) {
+                menuLateral.classList.remove('menu-ativo');
+            }
+        });
+    </script>
+</body>
+</html>

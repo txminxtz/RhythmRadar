@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Taylor Swift</title>
+</head>
+<body>
+    <header class="site-header">
+        <a href="index.html" class="logo"><i class='bx bx-headphone'></i>Rhythm Radar</a>
+        <div class="header-icons">
+            <a href="https://open.spotify.com/" target="_blank"><i class='bx bxl-spotify'></i></a>
+            <div id="menu"><i class='bx bx-menu'></i></div>
+        </div>
+    </header>
+
+    <div class="menu-lateral" id="menu-lateral">
+        <ul class="navegacao">
+            <li><a href="index.html">Menu Principal</a></li>
+            <li><a href="contato.html">Contact us</a></li>
+        </ul>
+    </div>
+    
+    <section class="home">
+        <div class="home-img">
+            <img src="imagens/2.png" class="one" alt="Taylor Swift">
+        </div>
+        <div class="home-text">
+            <h1>Taylor Swift</h1>
+            <h5>Taylor Alison Swift é uma cantora, compositora e atriz americana. Nascida em 13 de dezembro de 1989, em Reading, Pensilvânia, ela é conhecida por suas narrativas musicais e por seu estilo que evoluiu do country ao pop e indie folk. Swift é uma das artistas mais vendidas de todos os tempos.</h5>
+            <h3>Principais Músicas</h3>
+            <ul>
+                <li>Love Story</li>
+                <li>Shake It Off</li>
+                <li>Blank Space</li>
+                <li>Bad Blood</li>
+                <li>cardigan</li>
+                <li>willow</li>
+                <li>Look What You Made Me Do</li>
+                <li>Wildest Dreams</li>
+                <li>Anti-Hero</li>
+            </ul>
+            <a href="https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02?si=DxXLl9t8Qk-qxQ7xz1T1hg" class="btn">Spotify</a>
+        </div>
+    </section>
+
+    <div class="main">
+        <div class="roll">
+            <li><img src="imagens/main1.png" onclick="navigate('1.html')"></li>
+        </div>
+        <div class="roll2">
+            <li><img src="imagens/main2.png" onclick="navigate('2.html')"></li>
+        </div>
+        <div class="roll3">
+            <li><img src="imagens/main3.png" onclick="navigate('3.html')"></li>
+        </div>
+    </div>
+
+    <script>
+        function navigate(page) {
+            window.location.href = page;
+        }
+
+        const menuBtn = document.getElementById('menu');
+        const menuLateral = document.getElementById('menu-lateral');
+
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); 
+            menuLateral.classList.toggle('menu-ativo');
+        });
+
+        // Fecha o menu ao clicar fora dele
+        document.addEventListener('click', (e) => {
+            const target = e.target;
+            const menuOpen = menuLateral.classList.contains('menu-ativo');
+
+            if (menuOpen && target !== menuBtn && !menuLateral.contains(target)) {
+                menuLateral.classList.remove('menu-ativo');
+            }
+        });
+    </script>
+
+</body>
+</html>
