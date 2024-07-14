@@ -21,11 +21,17 @@
     </header>
 
     <div class="menu-lateral" id="menu-lateral">
-        <ul class="navegacao">
-            <li><a href="index.html">Menu Principal</a></li>
-            <li><a href="contato.html">Contact us</a></li>
-        </ul>
+        <div class="menu-content">
+            <i class='bx bx-x' id="close-menu"></i>
+            <div class="menu-links">
+                <ul class="navegacao">
+                    <li><a href="index.html">Menu Principal</a></li>
+                    <li><a href="contato.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
+    
     
     <section class="home">
         <div class="home-img">
@@ -50,6 +56,24 @@
         </div>
     </section>
     
+    <section class="retrospectiva">
+        <h3>Retrospectiva</h3>
+        <div class="slider">
+            <img class="slide" src="imagens/tw1.jpeg" alt="Foto 1">
+            <div class="legenda">The Weeknd nasceu e foi criado em Toronto, Canadá.</div>
+            <img class="slide" src="imagens/tw2.jpeg" alt="Foto 2">
+            <div class="legenda">The Weeknd lançou seu primeiro álbum de estúdio, "Kiss Land", em 2013.</div>
+            <img class="slide" src="imagens/tw3.jpeg" alt="Foto 3">
+            <div class="legenda">Em 2021, ele se apresentou no Super Bowl LV Halftime Show, um dos eventos musicais mais assistidos do mundo.</div>
+            <img class="slide" src="imagens/tw4.jpeg" alt="Foto 4">
+            <div class="legenda">Com 3 três prêmios Grammy, dezenove Billboard Music Awards, seis American Music Awards, quinze Juno Awards, e uma indicação a um Oscar, Tesfaye é reconhecido por seu estilo único que mescla R&B, pop e influências eletrônicas, conquistando uma base de fãs globalmente.</div>
+        </div>
+        <div class="controles">
+            <button class="prev" onclick="mudarSlide(-1)">&#10094;</button>
+            <button class="next" onclick="mudarSlide(1)">&#10095;</button>
+        </div>
+    </section>
+    
     <div class="main">
         <div class="roll">
             <li><img src="imagens/main1.png" onclick="navigate('1.html')"></li>
@@ -62,29 +86,8 @@
         </div>
     </div>
 
-    <script>
-        function navigate(page) {
-            window.location.href = page;
-        }
-
-        const menuBtn = document.getElementById('menu');
-        const menuLateral = document.getElementById('menu-lateral');
-
-        menuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            menuLateral.classList.toggle('menu-ativo');
-        });
-
-        // Fecha o menu ao clicar fora dele
-        document.addEventListener('click', (e) => {
-            const target = e.target;
-            const menuOpen = menuLateral.classList.contains('menu-ativo');
-
-            if (menuOpen && target !== menuBtn && !menuLateral.contains(target)) {
-                menuLateral.classList.remove('menu-ativo');
-            }
-        });
-    </script>
+    <script src="menu.js"></script>
+    <script src="retrospectiva.js"></script>
 
 </body>
 </html>

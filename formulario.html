@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado do Formulário</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Dados Recebidos</h2>
+        <p><strong>Nome:</strong> <span id="resultado-nome"></span></p>
+        <p><strong>Email:</strong> <span id="resultado-email"></span></p>
+        <p><strong>Mensagem:</strong> <span id="resultado-mensagem"></span></p>
+    </div>
+
+    <script>
+       
+        document.getElementById('resultado-nome').textContent = localStorage.getItem('nome');
+        document.getElementById('resultado-email').textContent = localStorage.getItem('email');
+        document.getElementById('resultado-mensagem').textContent = localStorage.getItem('mensagem');
+
+       
+        localStorage.removeItem('nome');
+        localStorage.removeItem('email');
+        localStorage.removeItem('mensagem');
+    </script>
+</body>
+</html>

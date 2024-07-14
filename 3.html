@@ -21,11 +21,17 @@
     </header>
 
     <div class="menu-lateral" id="menu-lateral">
-        <ul class="navegacao">
-            <li><a href="index.html">Menu Principal</a></li>
-            <li><a href="contato.html">Contact us</a></li>
-        </ul>
+        <div class="menu-content">
+            <i class='bx bx-x' id="close-menu"></i>
+            <div class="menu-links">
+                <ul class="navegacao">
+                    <li><a href="index.html">Menu Principal</a></li>
+                    <li><a href="contato.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
+    
     
     <section class="home">
         <div class="home-img">
@@ -44,9 +50,27 @@
                 <li>you should see me in a crown</li>
                 <li>lovely (feat. Khalid)</li>
                 <li>my future</li>
-                <li>Happier Than Ever</li>
+                <li>happier Than Ever</li>
             </ul>
             <a href="https://open.spotify.com/artist/6qqNVTkY8uBg9cP3Jd7DAH?si=XBvIleoeQdm5pl55PtG2og" class="btn" target="_blank">Spotify</a>
+        </div>
+    </section>
+
+    <section class="retrospectiva">
+        <h3>Retrospectiva</h3>
+        <div class="slider">
+            <img class="slide" src="imagens/b1.jpeg" alt="Foto 1">
+            <div class="legenda">Billie Eilish foi criada em Highland Park de Los Angeles.</div>
+            <img class="slide" src="imagens/b2.jpg" alt="Foto 2">
+            <div class="legenda">Billie em seu primeiro clipe da musica "Ocean Eyes", lançada em 2016</div>
+            <img class="slide" src="imagens/b3.jpeg" alt="Foto 3">
+            <div class="legenda">Em 2020, conquistou cinco prêmios Grammy, incluindo o de Gravação do Ano, Álbum do Ano, Canção do Ano e Artista Revelação. Fazendo dela a artista mais jovem e a primeira mulher a ganhar nas quatro principais categorias em um mesmo ano. O álbum "When We All Fall Asleep, Where Do We Go?" e a música "bad guy" foram particularmente destacados.</div>
+            <img class="slide" src="imagens/b4.jpeg" alt="Foto 3">
+            <div class="legenda">Atualmente, Billie Eilish continua sendo uma das artistas mais influentes e populares da indústria musical, tendo acumulado inúmeros prêmios e indicações ao longo de sua carreira.</div>
+        </div>
+        <div class="controles">
+            <button class="prev" onclick="mudarSlide(-1)">&#10094;</button>
+            <button class="next" onclick="mudarSlide(1)">&#10095;</button>
         </div>
     </section>
 
@@ -62,29 +86,8 @@
         </div>
     </div>
 
-
-    <script>
-        function navigate(page) {
-            window.location.href = page;
-        }
-
-        const menuBtn = document.getElementById('menu');
-        const menuLateral = document.getElementById('menu-lateral');
-
-        menuBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); 
-            menuLateral.classList.toggle('menu-ativo');
-        });
-
-        document.addEventListener('click', (e) => {
-            const target = e.target;
-            const menuOpen = menuLateral.classList.contains('menu-ativo');
-
-            if (menuOpen && target !== menuBtn && !menuLateral.contains(target)) {
-                menuLateral.classList.remove('menu-ativo');
-            }
-        });
-    </script>
-
+    <script src="menu.js"></script>
+    <script src="retrospectiva.js"></script>
+    
 </body>
 </html>

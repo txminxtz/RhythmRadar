@@ -20,12 +20,20 @@
         </div>
     </header>
 
+
     <div class="menu-lateral" id="menu-lateral">
-        <ul class="navegacao">
-            <li><a href="index.html">Menu Principal</a></li>
-            <li><a href="contato.html">Contact us</a></li>
-        </ul>
+        <div class="menu-content">
+            <i class='bx bx-x' id="close-menu"></i>
+            <div class="menu-links">
+                <ul class="navegacao">
+                    <li><a href="index.html">Menu Principal</a></li>
+                    <li><a href="contato.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
+    
+    
     
     <section class="home">
         <div class="home-img">
@@ -50,6 +58,22 @@
         </div>
     </section>
 
+    <section class="retrospectiva">
+        <h3>Retrospectiva</h3>
+        <div class="slider">
+            <img class="slide" src="imagens/ts1.jpeg" alt="Foto 1">
+            <div class="legenda">Taylor Swift nasceu em Reading, Pensilvânia, e foi criada em Wyomissing, EUA.</div>
+            <img class="slide" src="imagens/ts2.jpeg" alt="Foto 2">
+            <div class="legenda">Taylor lançou seu álbum de estreia autointitulado em 2006, aos 16 anos.</div>
+            <img class="slide" src="imagens/ts3.jpeg" alt="Foto 3">
+            <div class="legenda">Com 11 prêmios Grammy, vários recordes de vendas, e sendo uma das artistas mais premiadas da história, Taylor Swift é reconhecida por suas composições introspectivas e sua influência duradoura na música pop.</div>
+        </div>
+        <div class="controles">
+            <button class="prev" onclick="mudarSlide(-1)">&#10094;</button>
+            <button class="next" onclick="mudarSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
     <div class="main">
         <div class="roll">
             <li><img src="imagens/main1.png" onclick="navigate('1.html')"></li>
@@ -62,29 +86,8 @@
         </div>
     </div>
 
-    <script>
-        function navigate(page) {
-            window.location.href = page;
-        }
-
-        const menuBtn = document.getElementById('menu');
-        const menuLateral = document.getElementById('menu-lateral');
-
-        menuBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); 
-            menuLateral.classList.toggle('menu-ativo');
-        });
-
-        // Fecha o menu ao clicar fora dele
-        document.addEventListener('click', (e) => {
-            const target = e.target;
-            const menuOpen = menuLateral.classList.contains('menu-ativo');
-
-            if (menuOpen && target !== menuBtn && !menuLateral.contains(target)) {
-                menuLateral.classList.remove('menu-ativo');
-            }
-        });
-    </script>
-
+    <script src="menu.js"></script>
+    <script src="retrospectiva.js"></script>
+    
 </body>
 </html>

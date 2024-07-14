@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Rhythm Radar</title>
 </head>
@@ -22,12 +22,16 @@
 
     <div class="menu-lateral" id="menu-lateral">
         <div class="menu-content">
-            <ul class="navegacao">
-                <li><a href="index.html">Menu Principal</a></li>
-                <li><a href="contato.html">Contact Us</a></li>
-            </ul>
+            <i class='bx bx-x' id="close-menu"></i>
+            <div class="menu-links">
+                <ul class="navegacao">
+                    <li><a href="index.html">Menu Principal</a></li>
+                    <li><a href="contato.html">Contact us</a></li>
+                </ul>
+            </div>
         </div>
     </div>
+    
     
     <div class="inicio">
         <div class="texto-inicial">
@@ -50,28 +54,7 @@
         </div>
     </div>
 
-    <script>
-        function navigate(page) {
-            window.location.href = page;
-        }
-
-        const menuBtn = document.getElementById('menu');
-        const menuLateral = document.getElementById('menu-lateral');
-
-        menuBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); 
-            menuLateral.classList.toggle('menu-ativo');
-        });
-
-        document.addEventListener('click', (e) => {
-            const target = e.target;
-            const menuOpen = menuLateral.classList.contains('menu-ativo');
-
-            if (menuOpen && target !== menuBtn && !menuLateral.contains(target)) {
-                menuLateral.classList.remove('menu-ativo');
-            }
-        });
-    </script>
+    <script src="menu.js"></script>
 
 </body>
 </html>

@@ -20,15 +20,50 @@
     </header>
 
     <div class="menu-lateral" id="menu-lateral">
-        <ul class="navegacao">
-            <li><a href="index.html">Menu Principal</a></li>
-            <li><a href="contato.html">Contact us</a></li>
-        </ul>
+        <div class="menu-content">
+            <i class='bx bx-x' id="close-menu"></i>
+            <div class="menu-links">
+                <ul class="navegacao">
+                    <li><a href="index.html">Menu Principal</a></li>
+                    <li><a href="contato.html">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-
+    
     <div class="fim">
         <h3>Agradecemos sua visita ao nosso site. Para sugestões de novos conteúdos e/ou melhorias, entre em contato conosco!</h3>
     </div>
+
+    <div class="container-contato">
+        <h2>Fale Conosco</h2>
+        <form id="formulario" onsubmit="return enviarFormulario()">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <div id="mensagem-confirmacao" class="mensagem-confirmacao hidden">Formulário enviado com sucesso!</div>
+
+
+    <div class="informacoes-contato">
+        <h2>Informações de Contato</h2>
+        <p><i class='bx bxs-envelope'></i> Email: rhythmradar1@email.com</p>
+        <p><i class='bx bxs-phone'></i> Telefone: +55 11 94076-5225</p>
+        <p><i class='bx bxs-map'></i> Endereço: R. Pedro Vicente, 625 - Canindé, São Paulo - SP</p>
+    </div>
+
+    <div class="autores">
+        <h1>Autores</h1>
+    </div>
+
 
     <div class="container-tabela"> 
         <table class="tabela-fotos" border="0">
@@ -64,27 +99,8 @@
         </table>
     </div>
 
-    <script>
-        function navigate(page) {
-            window.location.href = page;
-        }
+    <script src="menu.js"></script>
+    <script src="formulario.js"></script>
 
-        const menuBtn = document.getElementById('menu');
-        const menuLateral = document.getElementById('menu-lateral');
-
-        menuBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); 
-            menuLateral.classList.toggle('menu-ativo');
-        });
-
-        document.addEventListener('click', (e) => {
-            const target = e.target;
-            const menuOpen = menuLateral.classList.contains('menu-ativo');
-
-            if (menuOpen && target !== menuBtn && !menuLateral.contains(target)) {
-                menuLateral.classList.remove('menu-ativo');
-            }
-        });
-    </script>
 </body>
 </html>
